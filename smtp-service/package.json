@@ -1,0 +1,20 @@
+{
+  "name": "smtp-service",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "start:dev": "ts-node-dev src/server.ts"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.0",
+    "nodemailer": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.0",
+    "@types/nodemailer": "^6.4.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}

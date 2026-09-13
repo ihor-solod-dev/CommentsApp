@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ChildrenResult {
+  items: [Comment!]!
+  total: Int!
+}
+
+type Comment {
+  children: [Comment!]!
+  dateTime: DateTime!
+  depth: Int!
+  files: [CommentFile!]!
+  id: ID!
+  isDeleted: Boolean!
+  parentId: String
+  score: Int!
+  text: String
+  totalChildren: Int!
+  user: CommentUser
+}
+
+type CommentFile {
+  filePath: String!
+  id: ID!
+}
+
+type CommentUser {
+  avatar: String
+  id: Int!
+  username: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  commentChildren(limit: Int! = 3, offset: Int! = 0, parentId: ID!): ChildrenResult!
+}

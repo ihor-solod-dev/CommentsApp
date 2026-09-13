@@ -1,0 +1,1 @@
+export { useReports as useReportsViewModel } from '../../features/reports/hooks/useReports';
